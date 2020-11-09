@@ -1,6 +1,9 @@
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript repository Consists of "Search" API endpoint which collects the data from Github & stores it in REDIS, "ClearCache" API Endpoint to clear the cache in REDIS
+[Nest](https://github.com/nestjs/nest) framework TypeScript repository Consists of 
+* "Search" API endpoint which collects the data from Github & stores it in REDIS, 
+* "ClearCache" API Endpoint to clear the cache in REDIS
+
 
 ## Installation
 
