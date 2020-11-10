@@ -5,6 +5,9 @@ import { ValidationError, ValidationPipe } from '@nestjs/common';
 import { ValidationException } from './validation/validation.exception';
 import { ValidationFilter } from './validation/validation.filter';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { User } from './api/models/user.model';
+import { Repo } from './api/models/repo.model';
+import { Issue } from './api/models/issue.model';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -15,7 +18,9 @@ async function bootstrap() {
     .setVersion('1.0.0')
     .build();
 
-  const document = SwaggerModule.createDocument(app, options);
+  const document = SwaggerModule.createDocument(app, options, {
+    extraModels: [User, Repo, Issue],
+  });
 
   SwaggerModule.setup('api-docs', app, document);
 
