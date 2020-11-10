@@ -31,6 +31,9 @@ export class ApiController {
     return result;
   }
 
+  @ApiOkResponse({
+    description: 'No Content response for cache-clear',
+  })
   @HttpCode(204)
   @Patch('clear-cache')
   async clearCache(): Promise<any> {
