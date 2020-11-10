@@ -1,13 +1,17 @@
 import { Controller, Post, Body, HttpCode, Patch } from '@nestjs/common';
 import { SearchApiDto } from './dto/search-api-dto';
 import { ApiService } from './api.service';
-import { ApiBody } from '@nestjs/swagger';
-import { SearchResponse } from './interfaces/search-response.interface';
+import { ApiBody, ApiOkResponse } from '@nestjs/swagger';
+import { SearchResponse } from './models/search-response.model';
 
 @Controller('api')
 export class ApiController {
   constructor(private readonly apiService: ApiService) {}
 
+  @ApiOkResponse({
+    description: 'List of Search Results',
+    type: SearchResponse,
+  })
   @ApiBody({ type: SearchApiDto })
   @HttpCode(200)
   @Post('search')

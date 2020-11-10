@@ -6,7 +6,7 @@ import {
   HttpException,
 } from '@nestjs/common';
 import { Cache } from 'cache-manager';
-import { SearchResponse } from './interfaces/search-response.interface';
+import { SearchResponse } from './models/search-response.model';
 import { CONSTANTS } from './../constants';
 
 @Injectable()
